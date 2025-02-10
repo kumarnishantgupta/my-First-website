@@ -66,3 +66,57 @@ window.addEventListener('scroll', () => {
   
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Ensure lastScrollTop is never negative
 });
+
+/* alert box for our section*/
+
+document.querySelectorAll('#services .service').forEach(service => {
+  service.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const customAlert = document.createElement('div');
+    customAlert.style.position = 'fixed';
+    customAlert.style.top = '50%';
+    customAlert.style.left = '50%';
+    customAlert.style.transform = 'translate(-50%, -50%)';
+    customAlert.style.padding = '20px';
+    customAlert.style.backgroundColor = '#222';
+    customAlert.style.color = '#fff';
+    customAlert.style.borderRadius = '12px';
+    customAlert.style.zIndex = '9999';
+    customAlert.style.textAlign = 'center';
+    customAlert.style.boxShadow = '0px 8px 24px rgba(0, 0, 0, 0.5)';
+    customAlert.style.opacity = '0';
+    customAlert.style.transition = 'opacity 0.3s ease-in-out';
+    customAlert.innerHTML = `
+      <div style="text-align: right;">
+        <span id="custom-alert-close" style="cursor: pointer; font-size: 18px; color: #ff4d4d; font-weight: bold;">&times;</span>
+      </div>
+      <p style="margin-top: 10px; font-size: 16px;">🚧 This service is currently under maintenance.<br>You will be redirected to an error page.</p>
+      <button id="custom-alert-btn" style="margin-top: 15px; padding: 10px 20px; background: #ff4d4d; border: none; color: white; font-size: 16px; border-radius: 8px; cursor: pointer; transition: background 0.3s ease;">OK</button>
+    `;
+
+    document.body.appendChild(customAlert);
+
+    // Fade-in animation
+    setTimeout(() => {
+      customAlert.style.opacity = '1';
+    }, 50);
+
+    // OK button click event
+    document.getElementById('custom-alert-btn').addEventListener('click', () => {
+      customAlert.style.opacity = '0';
+      setTimeout(() => {
+        document.body.removeChild(customAlert);
+        window.location.href = 'error.html';
+      }, 300);
+    });
+
+    // Close icon click event
+    document.getElementById('custom-alert-close').addEventListener('click', () => {
+      customAlert.style.opacity = '0';
+      setTimeout(() => {
+        document.body.removeChild(customAlert);
+      }, 300);
+    });
+  });
+});
