@@ -1,13 +1,16 @@
 
 // Preloader
 window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    setTimeout(() => {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
-    }, 1000);
+  const preloader = document.getElementById('preloader');
+  const content = document.getElementById('content'); // Ensure content exists
+
+  setTimeout(() => {
+      preloader.style.opacity = '0';
+      setTimeout(() => {
+          preloader.style.display = 'none';
+          content.style.display = 'block';
+      }, 500); // Smooth transition
+  }, 3000); // Total wait time
 });
 
 // Hamburger Menu
