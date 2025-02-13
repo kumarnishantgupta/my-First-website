@@ -551,3 +551,29 @@ footer {
         transform: translateX(-100%);
     }
 }
+.logo h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0f0e0e;
+  }
+  
+  .ads-box {
+    display: inline-block;
+    background-color: #ff4d4d; /* Customize box color */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: bounce 1.2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
