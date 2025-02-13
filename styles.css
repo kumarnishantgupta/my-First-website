@@ -145,20 +145,43 @@ nav {
     display: flex;
     gap: 20px;
     position: relative;
-    top: -12px;  /* 🔥 Yeh menu ko thoda upar karega */
-    
 }
 .nav-links a {
-    color: rgb(0, 0, 0);
+    color: rgb(19, 18, 18);
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease;
-    text-transform: uppercase ;
-    
 }
 .nav-links li a:hover {
-    color: #2307f9;
+    color: #f7f7f7;
     transform: scale(1.1);
+}
+nav ul li a {
+position: relative;
+padding: 10px 10px;
+text-decoration: none;
+color: #fff;
+transition: all 0.3s ease;
+}
+
+nav ul li a::before {
+content: "";
+position: absolute;
+top: 50%;
+left: 50%;
+width: 0;
+height: 0;
+background: rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(10px);
+border-radius: 100px;
+transform: translate(-50%, -50%);
+transition: all 0.3s ease;
+z-index: -1;
+}
+
+nav ul li a:hover::before {
+width: 120%;
+height: 100%;
 }
 .hamburger {
     display: none;
@@ -486,29 +509,6 @@ footer {
 .social-icons a:hover {
     color: #ff6600;
     transform: translateY(-3px);
-}
-.logo {
-    position: relative;
-    display: inline-block;
-}
-
-.logo img {
-    width: 70px; /* Adjust size */
-    height: 90px;
-    position: relative;
-
-}
-
-.logo-oval {
-    position: absolute;
-    bottom: -70px; /* Adjust to fit perfectly under the logo */
-    transform: translateX(-50%);
-    width: 150px;
-    height: 30px;
-    background: rgba(255, 0, 0, 0.7); /* Red color */
-    border-radius: 50%;
-    filter: blur(10px); /* Creates the glowing effect */
-    animation: oval-glow 1.5s infinite ease-in-out;
 }
 
 @keyframes oval-glow {
