@@ -70,7 +70,7 @@ window.addEventListener('scroll', () => {
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Ensure lastScrollTop is never negative
 });
 
-/* alert box for our section*/
+/* alert box for our section*
 
 document.querySelectorAll('#services .service').forEach(service => {
   service.addEventListener('click', (e) => {
@@ -123,3 +123,4 @@ document.querySelectorAll('#services .service').forEach(service => {
     });
   });
 });
+*/
