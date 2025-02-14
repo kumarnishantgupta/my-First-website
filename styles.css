@@ -126,7 +126,7 @@ header {
     padding: 10px 0; /* Isko kam kar diya taaki header na bade */
     position: fixed;
     width: 100%;
-    top: 0;
+    top: -20;
     z-index: 1000;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease-in-out;
@@ -143,7 +143,7 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 7px;
     position: relative;
 }
 .nav-links a {
@@ -188,7 +188,7 @@ height: 100%;
     font-size: 30px;
     cursor: pointer;
     position: relative;
-    top: -12px; 
+    top: px; 
 }
 /* Fullscreen menu styles */
 .fullscreen-menu {
@@ -338,6 +338,21 @@ height: 100%;
     text-align: center;
     padding: 10px;
     transition: transform 0.3s ease, 
+  }
+.digital-marketing{
+    text-decoration: none;
+  }
+
+  .google-ads{
+    text-decoration: none;
+  }
+
+  .meta-ads{
+    text-decoration: none;
+  }
+
+  .outdoor{
+    text-decoration: none;
   }
   
   .service h3,
@@ -555,6 +570,8 @@ footer {
     font-size: 22px;
     font-weight: bold;
     color: #0f0e0e;
+    position: relative;
+    top: 5px;
   }
   
   .ads-box {
@@ -564,6 +581,8 @@ footer {
     padding: 5px 10px;
     border-radius: 5px;
     animation: bounce 1.2s ease-in-out infinite alternate;
+      position: relative;
+    top: 5px;
   }
   
   @keyframes bounce {
