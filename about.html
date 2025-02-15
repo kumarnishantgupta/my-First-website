@@ -14,7 +14,7 @@
         .section { padding: 50px 20px; text-align: center; background: white; margin: 20px 0; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
         .team img { width: 120px; border-radius: 50%; transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; }
         .team img:hover { transform: scale(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-        h1, h2 { font-weight: 600; letter-spacing: 1px; }
+        h1 { font-weight: 600; letter-spacing: 1px; }
         .highlight { color: #ff6600; font-weight: 600; }
         .cta-button { display: inline-block; background: #ff6600; color: white; padding: 12px 25px; text-decoration: none; font-weight: 600; border-radius: 5px; margin-top: 20px; transition: background 0.3s; }
         .cta-button:hover { background: #e65c00; }
@@ -157,6 +157,19 @@
 }
 
 
+.h2 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 50px;
+            animation: fadeInOut 2s infinite alternate;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -190,14 +203,13 @@
             <p><span class="highlight">Results-Driven Approach:</span> We use data-backed strategies for high-impact campaigns.</p>
         </div>
         <div class="container">
-            <div class="section video-section">
-                <h2>About 1placeAds in Video</h2>
+            <div class="h2" id="animatedText">About 1placeAds in Video</div>
                 <div class="video-links">
-                    <div onclick="openPopup('video-hindi.mp4')">
+                    <div onclick="openPopup('hindi.mp4')">
                         <div class="video-icon">▶</div>
                         <span>Hindi</span>
                     </div>
-                    <div onclick="openPopup('video-english.mp4')">
+                    <div onclick="openPopup('english.mp4')">
                         <div class="video-icon">▶</div>
                         <span>English</span>
                     </div>
@@ -229,16 +241,24 @@
         }, 2000); // 2-second delay for preloader
     };
 
+    const texts = ["About 1placeAds in Video", "1placeAds के बारे में वीडियो "];
+        let index = 0;
+
+        setInterval(() => {
+            index = (index + 1) % texts.length;
+            document.getElementById("animatedText").textContent = texts[index];
+        }, 2000);
         </script>
+        
         
         <div class="section team">
             <h2>Meet Our Team</h2>
             <div>
-                <img src="team1.jpg" alt="Team Member">
+                <img src="head4.webp" alt="Team Member">
                 <p><strong></strong><br>CEO & Founder</p>
             </div>
             <div>
-                <img src="team2.jpg" alt="Team Member">
+                <img src="head3.png" alt="Team Member">
                 <p><strong></strong><br>Marketing Head</p>
             </div>
         </div>
