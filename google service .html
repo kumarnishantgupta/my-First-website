@@ -405,11 +405,7 @@
     opacity: 0;
   }
 }
-#testimonials {
-      padding: 50px 20px;
-      background: #f9f9f9;
-      text-align: center;
-    }
+
 .particle-container {
   position: absolute;
   width: 100vw;
@@ -434,74 +430,9 @@
     width: 100%; /* Full width on mobile */
   }
 }
-.moving review {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      overflow: hidden;
-    }
-  
-    .carousel {
-      display: flex;
-      gap: 70px;
-      animation: scroll-left 30s linear infinite;
-    }
-  
-    .second-row {
-      animation: scroll-left 30s linear infinite reverse; /* Second row moves in the same direction, but slightly staggered for a cool effect */
-    }
-  
-    .testimonial {
-      display: flex;
-      align-items: center;
-      min-width: 300px;
-      gap: 15px;
-      white-space: nowrap;
-    }
-  
-    .testimonial img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-  
-    .testimonial p {
-      font-size: 16px;
-      color: #333;
-    }
-  
-    @keyframes scroll-left {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
+
 
  </style>
-  
-
-  <section id="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="moving review">
-      <!-- First row -->
-      <div class="carousel">
-        <div class="testimonial"><img src="head1.jpg" alt="Client Photo"><p>"Amazing service! Highly recommended."</p></div>
-        <div class="testimonial"><img src="sumit.jpg" alt="Client Photo"><p>"1placeAds helped grow our business online."</p></div>
-        <div class="testimonial"><img src="head3.png" alt="Client Photo"><p>"Very professional and great results!"</p></div>
-        
-      </div>
-  
-      <!-- Second row -->
-      <div class="carousel second-row">
-        <div class="testimonial"><img src="adit.jpg" alt="Client Photo"><p>"Fantastic experience! Will work again."</p></div>
-        <div class="testimonial"><img src="head4.webp" alt="Client Photo"><p>"Boosted our online visibility massively."</p></div>
-        <div class="testimonial"><img src="sumit.jpg" alt="Client Photo"><p>"Super creative and efficient team!"</p></div>
-        <div class="testimonial"><img src="head2.jpg" alt="Client Photo"><p>"Helped us achieve our marketing goals."</p></div>
-        <div class="testimonial"><img src="head4.webp" alt="Client Photo"><p>"Always professional and reliable."</p></div>
-        <div class="testimonial"><img src="head1.jpg" alt="Client Photo"><p>"Exceeded our expectations!"</p></div>
-       
-      </div>
-    </div>
-  </section>
 
   <section class="counters" style="text-align: center; padding: 50px;">
     <h2>Our Achievements</h2>
@@ -651,7 +582,7 @@ window.addEventListener("resize", () => {
 });
 
   document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll(".parallax-section, .services, .testimonials");
+    const sections = document.querySelectorAll(".parallax-section, .services");
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
