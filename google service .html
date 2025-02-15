@@ -9,8 +9,9 @@
   <title>Google Ads Service | 1PlaceAds</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
+  
   <style>
+   
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
@@ -65,7 +66,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #0aff00, #00c3ff, #8a00ff);
+  background: linear-gradient(45deg, #ff0000, #87CEEB, #ffeb00, #87CEEB, #00c3ff, #8a00ff);
   background-size: 600% 600%;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
@@ -98,10 +99,11 @@
       color: #e61313;
       font-size: 2rem;
     }
-    .services, .testimonials, .counters {
+    .services, .testimonials {
       padding: 50px 20px;
       text-align: center;
     }
+   
     .service-item {
       display: inline-block;
       width: 30%;
@@ -403,6 +405,11 @@
     opacity: 0;
   }
 }
+#testimonials {
+      padding: 50px 20px;
+      background: #f9f9f9;
+      text-align: center;
+    }
 .particle-container {
   position: absolute;
   width: 100vw;
@@ -427,14 +434,73 @@
     width: 100%; /* Full width on mobile */
   }
 }
+.moving review {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow: hidden;
+    }
+  
+    .carousel {
+      display: flex;
+      gap: 70px;
+      animation: scroll-left 30s linear infinite;
+    }
+  
+    .second-row {
+      animation: scroll-left 30s linear infinite reverse; /* Second row moves in the same direction, but slightly staggered for a cool effect */
+    }
+  
+    .testimonial {
+      display: flex;
+      align-items: center;
+      min-width: 300px;
+      gap: 15px;
+      white-space: nowrap;
+    }
+  
+    .testimonial img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+  
+    .testimonial p {
+      font-size: 16px;
+      color: #333;
+    }
+  
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
 
  </style>
   
 
-  <section class="testimonials">
+  <section id="testimonials">
     <h2>What Our Clients Say</h2>
-    <p>"Increased our leads by 400%!"</p>
-    <p>"Highly recommend their Google Ads services."</p>
+    <div class="moving review">
+      <!-- First row -->
+      <div class="carousel">
+        <div class="testimonial"><img src="head1.jpg" alt="Client Photo"><p>"Amazing service! Highly recommended."</p></div>
+        <div class="testimonial"><img src="sumit.jpg" alt="Client Photo"><p>"1placeAds helped grow our business online."</p></div>
+        <div class="testimonial"><img src="head3.png" alt="Client Photo"><p>"Very professional and great results!"</p></div>
+        
+      </div>
+  
+      <!-- Second row -->
+      <div class="carousel second-row">
+        <div class="testimonial"><img src="adit.jpg" alt="Client Photo"><p>"Fantastic experience! Will work again."</p></div>
+        <div class="testimonial"><img src="head4.webp" alt="Client Photo"><p>"Boosted our online visibility massively."</p></div>
+        <div class="testimonial"><img src="sumit.jpg" alt="Client Photo"><p>"Super creative and efficient team!"</p></div>
+        <div class="testimonial"><img src="head2.jpg" alt="Client Photo"><p>"Helped us achieve our marketing goals."</p></div>
+        <div class="testimonial"><img src="head4.webp" alt="Client Photo"><p>"Always professional and reliable."</p></div>
+        <div class="testimonial"><img src="head1.jpg" alt="Client Photo"><p>"Exceeded our expectations!"</p></div>
+       
+      </div>
+    </div>
   </section>
 
   <section class="counters" style="text-align: center; padding: 50px;">
