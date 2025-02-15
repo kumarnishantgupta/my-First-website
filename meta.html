@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Ads - 1placeAds</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta {
+    background: #ff7f50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cta:hover {
+    transform: scale(1.1);
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Ad Types */
+.ad-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* FAQ Section */
+.faq-item {
+    background: white;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 600px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.faq-item:hover {
+    background: #e0e0e0;
+}
+
+.faq-item p {
+    display: none;
+}
+
+.faq-item.active p {
+    display: block;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+ /* Video Popup Styles */
+ .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.popup video {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+</style>
+<body>
+    <header class="hero">
+        <h1 class="fade-in">Boost Your Business with Meta Ads</h1>
+        <p class="fade-in delay-1">Maximize your reach and engagement with targeted Meta Ads campaigns across Facebook, Instagram, Messenger, and WhatsApp.</p>
+        <button class="cta" onclick="openPopup()">Get Started</button>
+    </header>
+
+    <section class="about-meta-ads slide-in">
+        <h2>What are Meta Ads?</h2>
+        <p>Meta Ads are a powerful advertising solution provided by Meta, allowing businesses to create highly targeted campaigns across multiple platforms, including Facebook, Instagram, Messenger, and WhatsApp. These ads enable brands to connect with their ideal customers by leveraging advanced data analytics, demographic insights, and AI-driven ad placements. Whether you're looking to increase brand awareness, generate leads, or boost conversions, Meta Ads offer a versatile and effective way to achieve your business goals.</p>
+    </section>
+
+    <section class="benefits fade-in">
+        <h2>Benefits of Meta Ads</h2>
+        <ul>
+            <li class="slide-in">🎯 <strong>Precise Targeting:</strong> Reach the right audience using Meta’s powerful targeting tools.</li>
+            <li class="slide-in delay-1">💬 <strong>Direct Customer Engagement:</strong> Interact with customers via Messenger and WhatsApp Ads.</li>
+            <li class="slide-in delay-2">💰 <strong>Cost-Effective Solutions:</strong> Optimize your ad spend with smart bidding strategies.</li>
+            <li class="slide-in delay-3">📈 <strong>High Engagement & Conversions:</strong> Leverage interactive and visually appealing ads.</li>
+            <li class="slide-in delay-4">📊 <strong>Advanced Analytics:</strong> Track performance with real-time insights.</li>
+        </ul>
+    </section>
+
+    <section class="types-of-ads zoom-in">
+        <h2>Types of Meta Ads</h2>
+        <div class="ad-cards">
+            <div class="card flip">🎠 <strong>Facebook Carousel Ads:</strong> Showcase multiple images or videos in a single ad.</div>
+            <div class="card flip delay-1">📖 <strong>Instagram Story Ads:</strong> Full-screen vertical ads with high engagement.</div>
+            <div class="card flip delay-2">🎥 <strong>Video Ads:</strong> Captivating short and long-form video promotions.</div>
+            <div class="card flip delay-3">📝 <strong>Lead Ads:</strong> Collect user information directly within the platform.</div>
+            <div class="card flip delay-4">📩 <strong>Click-to-Message Ads:</strong> Drive direct interactions through WhatsApp and Messenger.</div>
+        </div>
+    </section>
+     <!-- Video Popup -->
+     <div class="popup" id="videoPopup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">×</button>
+            <video id="videoPlayer" controls>
+                <source src="meta.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <section class="how-we-help slide-in">
+        <h2>How We Help?</h2>
+        <p>At 1placeAds, we specialize in designing and executing high-performing Meta Ad campaigns tailored to your business needs. Our expert team leverages data-driven insights, AI-powered tools, and creative strategies to ensure maximum return on investment. We handle everything from ad creation, audience targeting, and budget optimization to performance tracking and continuous refinement. Our goal is to help you grow your brand presence, generate quality leads, and convert prospects into loyal customers.</p>
+    </section>
+
+    <section class="why-choose-us fade-in">
+        <h2>Why Choose Us?</h2>
+        <p>With a proven track record of delivering successful ad campaigns, 1placeAds stands out as a leader in Meta Ads management. Our customized approach ensures that your brand reaches the right audience at the right time, driving exceptional results.</p>
+        <blockquote class="zoom-in">"1placeAds helped us scale our WhatsApp and Messenger leads by 200%! Their expertise in ad targeting and optimization is unmatched." - Satisfied Client</blockquote>
+    </section>
+
+    <section class="faq slide-in">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item flip">
+            <h3>How much do Meta Ads cost?</h3>
+            <p>The cost varies based on your target audience, competition, and campaign goals. We help optimize your budget for the best ROI.</p>
+        </div>
+        <div class="faq-item flip delay-1">
+            <h3>Which platform is best for my business?</h3>
+            <p>Facebook and Instagram are great for brand awareness, while WhatsApp and Messenger work best for direct customer engagement.</p>
+        </div>
+        <div class="faq-item flip delay-2">
+            <h3>Can I run ads on all platforms simultaneously?</h3>
+            <p>Yes! Meta Ads allow seamless multi-platform ad placements to maximize reach and conversions.</p>
+        </div>
+    </section>
+
+    <footer class="fade-in">
+        <p>&copy; 2025 1placeAds. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openPopup() {
+            document.getElementById("videoPopup").style.display = "flex";
+        }
+
+        function closePopup() {
+            let popup = document.getElementById("videoPopup");
+            let video = document.getElementById("videoPlayer");
+            video.pause();
+            popup.style.display = "none";
+        }
+
+        // Close popup when clicking outside the content
+        document.getElementById("videoPopup").addEventListener("click", function(event) {
+            if (event.target === this) {
+                closePopup();
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+    // Smooth scrolling for CTA button
+    document.querySelector(".cta").addEventListener("click", () => {
+        window.scrollTo({
+            top: document.querySelector(".about-meta-ads").offsetTop,
+            behavior: "smooth"
+        });
+    });
+
+    // FAQ Toggle
+    document.querySelectorAll(".faq-item").forEach(item => {
+        item.addEventListener("click", () => {
+            item.classList.toggle("active");
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
