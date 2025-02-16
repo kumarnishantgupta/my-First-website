@@ -1,4 +1,13 @@
-
+let favicons = ["favicon.png", "favicon2.png", "favicon3.png"];
+let index = 0;
+function changeFavicon() {
+    let link = document.querySelector("link[rel='icon']") || document.createElement("link");
+    link.rel = "icon";
+    link.href = favicons[index];  
+    document.head.appendChild(link);
+    index = (index + 1) % favicons.length;  
+}
+setInterval(changeFavicon, 3000); // Change every 3 seconds
 // Preloader
 window.addEventListener('load', () => {
   const preloader = document.getElementById('preloader');
